@@ -29,7 +29,7 @@ SUBDIRECTORY_OK='Yes' . "$(git --exec-path)/git-sh-setup"
 # Defaults
 is_commit=0
 is_issue=0
-protocol="https"
+protocol="http"
 print_only=0
 suffix_flag=""
 
