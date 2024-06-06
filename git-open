@@ -18,7 +18,7 @@ git open [remote] [branch]
   Available options are
 c,commit!     open current commit
 m,merge!      open merge requests
-M,create_merge=! create a merge request
+M,create_merge= create a merge request
 P,pipelines!  open pipelines
 i,issue!      open issues page
 s,suffix=     append this suffix
