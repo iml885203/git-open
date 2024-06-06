@@ -18,6 +18,7 @@ git open [remote] [branch]
   Available options are
 c,commit!     open current commit
 m,merge!      open merge requests
+P,pipelines!  open pipelines
 i,issue!      open issues page
 s,suffix=     append this suffix
 p,print!      just print the url
@@ -30,6 +31,7 @@ SUBDIRECTORY_OK='Yes' . "$(git --exec-path)/git-sh-setup"
 # Defaults
 is_commit=0
 is_merge=0
+is_pipelines=0
 is_issue=0
 protocol="http"
 print_only=0
@@ -39,6 +41,7 @@ while test $# != 0; do
   case "$1" in
   --commit) is_commit=1;;
   --merge) is_merge=1;;
+  --pipelines) is_pipelines=1;;
   --issue) is_issue=1;;
   --suffix=*) suffix_flag="$1";;
   --print) print_only=1;;
@@ -251,6 +254,8 @@ if (( is_commit )); then
     openurl="$openurl/commit/$sha"
 elif (( is_merge )); then
     openurl="$openurl/merge_requests"
+elif (( is_pipelines )); then
+    openurl="$openurl/pipelines"
 elif [[ $remote_ref != "master" ]]; then
     # simplify URL for master
     openurl="$openurl$providerBranchRef"
