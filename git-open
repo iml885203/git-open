@@ -59,7 +59,7 @@ IFS='=' read -ra suffix_flag <<< "$suffix_flag"
 function join_by { local IFS="$1"; shift; echo "$*"; }
 suffix=$(join_by "=" "${suffix_flag[@]:1}")
 
-$ parse create merge
+# parse create merge
 create_merge_flag=$(echo "$create_merge_flag" | sed 's/--create_merge=//')
 
 # are we in a git repo?
