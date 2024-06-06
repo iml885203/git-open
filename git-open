@@ -17,7 +17,7 @@ git open [remote] [branch]
 
   Available options are
 c,commit!     open current commit
-c,merge!     open current commit
+m,merge!      open merge requests
 i,issue!      open issues page
 s,suffix=     append this suffix
 p,print!      just print the url
