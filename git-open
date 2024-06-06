@@ -18,7 +18,7 @@ git open [remote] [branch]
   Available options are
 c,commit!     open current commit
 m,merge!      open merge requests
-M,create_merge! create a merge request
+M,create_merge=! create a merge request
 P,pipelines!  open pipelines
 i,issue!      open issues page
 s,suffix=     append this suffix
@@ -33,6 +33,7 @@ SUBDIRECTORY_OK='Yes' . "$(git --exec-path)/git-sh-setup"
 is_commit=0
 is_merge=0
 is_create_merge=0
+create_merge_flag=""
 is_pipelines=0
 is_issue=0
 protocol="http"
@@ -43,7 +44,7 @@ while test $# != 0; do
   case "$1" in
   --commit) is_commit=1;;
   --merge) is_merge=1;;
-  --create_merge) is_create_merge=1;;
+  --create_merge=*) is_create_merge=1; create_merge_flag="$1" ;;
   --pipelines) is_pipelines=1;;
   --issue) is_issue=1;;
   --suffix=*) suffix_flag="$1";;
@@ -258,7 +259,7 @@ if (( is_commit )); then
 elif (( is_merge )); then
     openurl="$openurl/merge_requests"
 elif (( is_create_merge )); then
-    openurl="$openurl/merge_requests/new?merge_request[source_branch]=$remote_ref&merge_request[target_branch]=$1"
+    openurl="$openurl/merge_requests/new?merge_request%5Bsource_branch%5D=$remote_ref&merge_request%5Btarget_branch%5D=$create_merge_flag"
 elif (( is_pipelines )); then
     openurl="$openurl/pipelines"
 elif [[ $remote_ref != "master" ]]; then
