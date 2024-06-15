@@ -1,4 +1,4 @@
-# git-open [![Build Status](https://img.shields.io/travis/paulirish/git-open/master.svg)](https://travis-ci.org/paulirish/git-open)
+# git-open
 
 Type `git open` to open the repo website (GitHub, GitLab, Bitbucket) in your browser.
 
@@ -81,31 +81,31 @@ Save the `git-open` script in any place accessible via your `%PATH%` environment
 
 #### [Antigen](https://github.com/zsh-users/antigen)
 
-Add `antigen bundle paulirish/git-open` to your `.zshrc` with your other bundle
+Add `antigen bundle iml885203/git-open` to your `.zshrc` with your other bundle
 commands.
 
 Antigen will handle cloning the plugin for you automatically the next time you
 start zsh, and periodically checking for updates to the git repository. You can
-also add the plugin to a running zsh with `antigen bundle paulirish/git-open`
+also add the plugin to a running zsh with `antigen bundle iml885203/git-open`
 for testing before adding it to your `.zshrc`.
 
 #### [Oh-My-Zsh](http://ohmyz.sh/)
 
-1. `git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open`
+1. `git clone https://github.com/iml885203/git-open.git $ZSH_CUSTOM/plugins/git-open`
 2. Add `git-open` to your plugin list - edit `~/.zshrc` and change
     `plugins=(...)` to `plugins=(... git-open)`
 3. `source ~/.zshrc`
 
 #### [Zgen](https://github.com/tarjoilija/zgen)
 
-Add `zgen load paulirish/git-open` to your .zshrc file in the same function
+Add `zgen load iml885203/git-open` to your .zshrc file in the same function
 you're doing your other `zgen load` calls in. ZGen will take care of cloning
 the repository the next time you run `zgen save`, and will also periodically
 check for updates to the git repository.
 
 #### [zplug](https://github.com/zplug/zplug)
 
-`zplug "paulirish/git-open", as:plugin`
+`zplug "iml885203/git-open", as:plugin`
 
 ## Supported remote repositories
 
