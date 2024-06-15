@@ -22,6 +22,21 @@ git open -i
 git open --print
 git open -p
     # Only print the url at the terminal, but don't open it
+
+#############################
+##### Custom for Gitlab #####
+#############################
+git open --merge
+git open -m
+    # Open merge requests page
+
+git open --create_merge [target-branch-name]
+git open -M
+    # create a merge request
+
+git open --pipeline
+git open -P
+    # open pipelines page
 ```
 
 (`git open` works with these [hosted repo providers](#supported-remote-repositories), `git open --issue` currently only works with GitHub, Visual Studio Team Services and Team Foundation Server)
@@ -47,6 +62,26 @@ $ git open --print
 
 $ git open --suffix pulls
 # opens https://github.com/TRACKED_REMOTE_USER/CURRENT_REPO/pulls
+
+#############################
+##### Custom for Gitlab #####
+#############################
+$ git open --merge
+# opens https://gitlab.com/TRACKED_REMOTE_USER/CURRENT_REPO/merge_requests
+
+$ git open --create_merge targetbranch
+# opens https://gitlab.com/TRACKED_REMOTE_USER/CURRENT_REPO/merge_requests/new?merge_request[source_branch]=sourcebranch&merge_request[target_branch]=targetbranch
+
+$ git open --pipeline
+# opens https://gitlab.com/TRACKED_REMOTE_USER/CURRENT_REPO/pipelines
+```
+
+## Custom alias
+```
+# Git aliases - Begin
+alias gop='git open'
+alias gom='git open -M'
+# Git aliases - End
 ```
 
 ## Installation
